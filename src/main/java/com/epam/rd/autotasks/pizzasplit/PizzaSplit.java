@@ -1,10 +1,22 @@
 package com.epam.rd.autotasks.pizzasplit;
 
+import java.util.Scanner;
+
 public class PizzaSplit {
     public static void main(String[] args) {
-        //Write a program, reading number of people and number of pieces per pizza and then
-        //printing minimum number of pizzas to order to split all the pizzas equally and with no remainder
-
+        int[] argue = new int[2];
+        int i = 0;
+        Scanner scan = new Scanner(System.in);
+        String string = scan.nextLine();
+        for (String s: string.split(" ")) {
+            argue[i] = Integer.parseInt(s);
+            i++;
+        }
+        int quantityPizza = 1;
+        while (quantityPizza * argue[1] % argue[0] != 0){
+            quantityPizza++;
+        }
+        System.out.println(quantityPizza);
 
 
     }
